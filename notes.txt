@@ -1,0 +1,74 @@
+==========Node Console==========
+$node
+- runs node console (REPL = Read Eval Print Loop)
+$node fileName
+- executes js fileName in Chrome js engine
+>.help to list commands
+>.save to save repl session to a file
+>.load fileName to load a file into repl session
+>.break & >.clear to exit multiline expression
+
+==========Basics===========
+Object literals:
+var obj = {
+    authorName: "me",
+    language: "Node.js"
+}
+
+Buffers are a node specific datatype, typically used to hold binary data
+
+Processes:
+- each node app runs in a sile process, and the process object hold data related to that
+- Node expressions default to local scope
+
+Global scope:
+- globals must be exported and required()
+exports.loBuffers are a node specific datatype, typically used to hold binary data
+
+Processes:
+- each node app runs in a sile process, and the process object hold data related to that
+- Node expressions default to local scope
+
+Global scope:
+- globals must be exported and required()
+exports.log = {
+    console: function(msg) {
+        console.log(msg);
+    },
+    file: function(msg) {
+        // log to file here    
+    }
+}
+
+^ log can now be accessed anywhere in the node project using require()
+
+
+==========Node Modules===========
+- reuseable, standalone libraries
+- uses CommonJS lib (obviously)
+- 3 Module Types: Core, Local, 3rd-party
+- core must still be imported with require() to be used
+
+
+Most important Core Modules:
+- http: many resources for creating a http server
+- url: for resolving and parsing urls
+- querystring: deals with db querystrings
+- path: handles file paths
+- fs: handles file IO
+- util: has amny dev tools
+Load and use Core http
+
+let http = require('http');
+
+let server = http.createServer(function(req, res) {
+        //server code here
+    });
+server.listen(5000);
+
+==========Local Modules==========
+- seperate, individual functionalities for intra/interproject reuse
+
+
+==========Export Module===========
+
