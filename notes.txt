@@ -71,4 +71,23 @@ server.listen(5000);
 
 
 ==========Export Module===========
+- module.export || just exports is a js object unique to every js file
+- module.exports for primitive datatypes
+- module.exports.[propName] for exporeting specific properties, datatypes, and functions
+    - import (after requiring) with [module var].[propName]
+- can ignore [propName] if exporting an anon function
+
+- you can import a directory with specificity by usign a package.json
+eg. ./utility/package.json
+{
+    "name": "log",
+    "main": "./Log.js"
+}
+
+.:
+eg ./App.js
+var log = require('./utility');
+
+- if no package.json, then node will search for index.js
+
 
